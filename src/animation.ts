@@ -11,7 +11,8 @@ earth.src =
   "https://live.mdnplay.dev/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations/canvas_earth.png";
 
 export function draw() {
-  const ctx = document.getElementById("canvas").getContext("2d");
+  const canvas = document.getElementById("canvas")! as HTMLCanvasElement;
+  const ctx = canvas.getContext("2d")!;
 
   ctx.globalCompositeOperation = "destination-over";
   ctx.clearRect(0, 0, 300, 300); // clear canvas
